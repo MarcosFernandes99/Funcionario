@@ -7,25 +7,24 @@ class Gerente extends Funcionario{
     Departamento
 
     ExibirInformações(){
-        console.log(primeiroGerente)
+        console.log(this.Nome + " , " + "R$" + this.Salario + " , " + this.Departamento)
     }
 }
 
 class Vendedor extends Funcionario{
     PercentualComissao
-    SalarioaAjustado
+    
 
    
     CalcularSalario(){
         let resultado
         resultado = primeiroVendedor.Salario + (primeiroVendedor.Salario * (this.PercentualComissao / 100))
-        this.SalarioaAjustado = resultado
         return resultado
     }
     
 
     ExibirInformaçõesVendedor(){
-        console.log(primeiroVendedor)
+        console.log(this.Nome + " , " + "R$" + this.Salario + " , " + "R$" + this.CalcularSalario() + " , " + "%" + this.PercentualComissao)
     }
 }
 
