@@ -13,12 +13,10 @@ class Gerente extends Funcionario{
 
 class Vendedor extends Funcionario{
     PercentualComissao
-    
-
-   
+       
     CalcularSalario(){
         let resultado
-        resultado = primeiroVendedor.Salario + (primeiroVendedor.Salario * (this.PercentualComissao / 100))
+        resultado = this.Salario + (this.Salario * (this.PercentualComissao / 100))
         return resultado
     }
     
@@ -26,6 +24,16 @@ class Vendedor extends Funcionario{
     ExibirInformaçõesVendedor(){
         console.log(this.Nome + " , " + "R$" + this.Salario + " , " + "R$" + this.CalcularSalario() + " , " + "%" + this.PercentualComissao)
     }
+}
+
+class Produto{
+    Nome
+    Valor
+}
+
+
+class Venda extends Vendedor{
+    Vendedor
 }
 
 let primeiroGerente = new Gerente()
@@ -40,3 +48,5 @@ primeiroVendedor.Salario = 2000
 primeiroVendedor.PercentualComissao = 5
 console.log("Salário ajustado de acordo com a comissão:", "R$", primeiroVendedor.CalcularSalario())
 primeiroVendedor.ExibirInformaçõesVendedor()
+
+
